@@ -27,6 +27,10 @@ Route::get('/calender', function () {
     return view('calender');
 });
 
+Route::get('/camera', function () {
+    return view('camera');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
