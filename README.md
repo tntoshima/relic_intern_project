@@ -38,7 +38,7 @@ docker-compose stop
 ## URL
 サンプルアプリ：http://localhost/
 
-phpMyAdmin: http://localhost:8080/
+phpMyAdmin: php 
 
 ## コマンドリファレンス
 
