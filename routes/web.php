@@ -31,6 +31,8 @@ Route::get('/camera', function () {
     return view('camera');
 });
 
+Route::get('/money_manager','money_managerController@showList');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
