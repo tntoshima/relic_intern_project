@@ -25,6 +25,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+    #コメント追加
     public function down(): void
     {
         Schema::dropIfExists('users');
