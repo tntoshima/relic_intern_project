@@ -16,10 +16,10 @@
                     <!-- メニュー -->
                     <nav class="nav_content">
                     <ul class="nav_list">
-                        <li class="nav_item"><a href="">ホーム</a></li>
-                        <li class="nav_item"><a href="">経費管理</a></li>
-                        <li class="nav_item"><a href="">カメラ</a></li>
-                        <li class="nav_item"><a href="">設定</a></li>
+                        <li class="nav_item"><a href="{{ url('/calender') }}">ホーム</a></li>
+                        <li class="nav_item"><a href="{{ url('/moneyManager') }}">経費管理</a></li>
+                        <li class="nav_item"><a href="{{ url('/camera') }}">カメラ</a></li>
+                        <li class="nav_item"><a href="{{ url('/setting') }}">設定</a></li>
                         <!--<li class="nav_item"><a href="">おしらせ</a></li>-->
                         <!--<li class="nav_item"><a href="">チャット</a></li>-->
                     </ul>
