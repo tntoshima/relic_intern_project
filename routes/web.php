@@ -35,6 +35,9 @@ Route::get('/template', function () {
     return view('template');
 });
 
+Route::get('/table', function () {
+    return view('table');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
