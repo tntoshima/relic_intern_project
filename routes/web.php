@@ -35,6 +35,13 @@ Route::get('/template', function () {
     return view('template');
 });
 
+Route::get('/makeQR', function () {
+    return view('makeQR');
+});
+
+Route::get('/payment', function () {
+    return view('payment');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
