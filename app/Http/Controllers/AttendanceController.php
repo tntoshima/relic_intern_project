@@ -12,7 +12,7 @@ class AttendanceController extends Controller
 {
     public function showList($id, $date){
         $club = Club::where('id', $id)->first();
-        $attendances = Attendance::where('date', 'LIKE',   $date . '%')
+        $attendances = Attendance::where('date', 'LIKE',  '%'. $date . '%')
                              ->where('club_id', $club->id)
                              ->get();
         return view('attendance.list',[

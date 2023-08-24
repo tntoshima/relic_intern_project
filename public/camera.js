@@ -25,6 +25,7 @@ window.onload = (e)=>{
 			if(code){
 				drawRect(code.location);// Rect
 				msg.innerText = code.data;// Data
+
 				// ポスト
 				axios.post('/attendance-data', {
 					date: code.data
@@ -36,6 +37,8 @@ window.onload = (e)=>{
 					// エラーを処理するコード
 				});
 				//window.location.href = "/attendance";
+				window.location.href = "/table/1/"+code.data.slice(0,10);
+
 
 			}else{
 				msg.innerText = "Detecting QR-Code...";
