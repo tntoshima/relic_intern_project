@@ -31,6 +31,7 @@ Route::get('/calender', function () {
 Route::get('/camera', function () {
     return view('camera');
 });
+Route::post('/camera',[]);
 
 Route::get('/template', function () {
     return view('template');
@@ -43,6 +44,7 @@ Route::get('/makeQR', function () {
 Route::get('/payment', function () {
     return view('payment');
 });
+
 
 Route::get('/table/{id}/{date}', [AttendanceController::class, 'showList']);
 
