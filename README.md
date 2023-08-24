@@ -56,6 +56,6 @@ docker-compose exec laravel.test php artisan clear-compiled
 # Laravel実行コンテナにログイン
 docker-compose exec laravel.test /bin/bash
 
-# はじめにseederのコマンドを実行してください
+# はじめにseederのコマンドを実行してください(bashにはいってください)
 php artisan migrate:fresh --seed
 ```
