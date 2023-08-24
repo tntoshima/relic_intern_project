@@ -15,7 +15,7 @@ class AttendanceTableSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('attendance')->insert([
+        DB::table('attendan')->insert([
             [
                 'club_id'=>'1',
                 'member_id'=>'1',
