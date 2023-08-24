@@ -1,4 +1,12 @@
+@extends('layouts.layout')
 
+@section('page-name')
+<!-- ここにページ名を書く -->
+ホーム
+@endsection
+
+@section('child')
+<!-- ページのメイン機能を書く -->
 <?php
 date_default_timezone_set('Asia/Tokyo');
 //東京のタイムゾーンを使用する
@@ -69,6 +77,12 @@ $week = '';
         </div>
     </body>
 </html>
+
+
+
+
+@endsection
+
 
 
 
