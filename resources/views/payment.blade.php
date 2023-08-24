@@ -9,51 +9,53 @@
 @section('child')
 
 <?php
-$left = isset($_GET['left']) ? $_GET['left'] : null;
+$monthly = isset($_GET['monthly']) ? $_GET['monthly'] : 0;
 $operator = isset($_GET['operator']) ? $_GET['operator'] : '+';
-$right = isset($_GET['right']) ? $_GET['right'] : null;
+$place = isset($_GET['place']) ? $_GET['place'] : 0;
+$fixtures = isset($_GET['fixtures']) ? $_GET['fixtures'] : 0;
+$insurance = isset($_GET['insurance']) ? $_GET['insurance'] : 0;
+$subsidy = isset($_GET['subsidy']) ? $_GET['subsidy'] : 0;
 
-if (!is_null($left) && !is_null($right)) {
-    switch ($operator) {
-        case '-':
-            $answer = $left - $right;
-            break;
-        case '*':
-            $answer = $left * $right;
-            break;
-        case '/':
-            $answer = $left / $right;
-            break;
-        case '+':
-        default:
-            $answer = $left + $right;
-            break;
-    }
-    $result = "{$left} {$operator} {$right} = {$answer}";
-} else {
-    $result = '計算結果なし';
-}
+
+$answer = $monthly - $place - $fixtures  - $insurance + $subsidy;
+
+
+
 ?>
-<!DOCTYPE html>
-<html>
 <head>
     <meta charset="UTF-8"/>
     <title>計算</title>
 </head>
 <body>
 <form action="payment" method="GET">
-    <input type="text" name="left" value="<?php echo $left; ?>" required autofocus/>
-    <select name="operator">
-        <option value="+" <?php if ($operator === '+') { echo 'selected'; } ?>>+</option>
-        <option value="-" <?php if ($operator === '-') { echo 'selected'; } ?>>-</option>
-        <option value="*" <?php if ($operator === '*') { echo 'selected'; } ?>>*</option>
-        <option value="/" <?php if ($operator === '/') { echo 'selected'; } ?>>/</option>
-    </select>
-    <input type="text" name="right" value="<?php echo $right; ?>" required/>
-    <input type="submit" value="計算する">
+    <div>
+        月謝　
+        <input type="text" name="monthly" value="<?php echo $monthly; ?>" required autofocus/>
+    </div>
+    <div>
+        場所代
+        <input type="text" name="place" value="<?php echo $place; ?>" required/>
+    </div>
+    <div>
+        備品　
+        <input type="text" name="fixtures" value="<?php echo $fixtures; ?>" required/>
+    </div>
+    <div>
+        保険　
+        <input type="text" name="insurance" value="<?php echo $insurance; ?>" required/>
+    </div>
+    <div>
+        補助金
+        <input type="text" name="subsidy" value="<?php echo $subsidy; ?>" required/>
+    </div>
+    <div>
+        <input type="submit" value="計算する">
+    </div>
+    <div>
+        合計
+        <input type="text" name="answer" value="<?php echo $answer; ?>" required/>
+    </div>
 </form>
-<p><?php echo $result; ?></p>
 </body>
-</html>
 
 @endsection
