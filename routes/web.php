@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('calender');
 });
 
 Route::get('/home', function () {
@@ -35,6 +35,17 @@ Route::get('/template', function () {
     return view('template');
 });
 
+Route::get('/makeQR', function () {
+    return view('makeQR');
+});
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+
+Route::get('/table', function () {
+    return view('table');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
