@@ -46,6 +46,8 @@ Route::get('/payment', function () {
 
 Route::get('/table/{id}/{date}', [AttendanceController::class, 'showList']);
 
+Route::post('/attendance-data', [AttendanceController::class, 'qrPost']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

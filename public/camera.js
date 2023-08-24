@@ -1,5 +1,6 @@
+const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 window.onload = (e)=>{
-
+	let date = new Date();
 	let video  = document.createElement("video");
 	let canvas = document.getElementById("canvas");
 	let ctx    = canvas.getContext("2d");
@@ -24,6 +25,18 @@ window.onload = (e)=>{
 			if(code){
 				drawRect(code.location);// Rect
 				msg.innerText = code.data;// Data
+				// ポスト
+				axios.post('/attendance-data', {
+					date: code.data
+				})
+				.then(response => {
+					// レスポンスを処理するコード
+				})
+				.catch(error => {
+					// エラーを処理するコード
+				});
+				//window.location.href = "/attendance";
+
 			}else{
 				msg.innerText = "Detecting QR-Code...";
 			}
