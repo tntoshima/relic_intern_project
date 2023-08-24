@@ -12,7 +12,9 @@ class AttendanceController extends Controller
 {
     public function showList($id, $date){
         $club = Club::where('id', $id)->first();
-        $attendances = Attendance::where('date', $date)->where('club_id', $club->id)->get();
+        $attendances = Attendance::where('date', 'LIKE',   $date . '%')
+                             ->where('club_id', $club->id)
+                             ->get();
         return view('attendance.list',[
             'attendances' => $attendances,
             'club' => $club,
@@ -23,7 +25,7 @@ class AttendanceController extends Controller
     public function qrPost(Request $request){
         $attendance = new Attendance();
         $attendance->club_id="1";
-        $attendance->member_id="10";
+        $attendance->member_id=mt_rand(1, 3); ;
         $attendance->date=$request->date;
         $attendance->save();
     }

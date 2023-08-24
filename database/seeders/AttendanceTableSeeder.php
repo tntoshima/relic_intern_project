@@ -21,6 +21,11 @@ class AttendanceTableSeeder extends Seeder
                 'member_id'=>'1',
                 'date'=>'20220824'
             ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'2',
+                'date'=>'20220824'
+            ],
         ]);
     }
 }
