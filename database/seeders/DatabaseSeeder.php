@@ -27,7 +27,5 @@ class DatabaseSeeder extends Seeder
         (AffiliationTableSeeder::class);
         $this->call
         (AttendanceTableSeeder::class);
-        $this->call
-        (AccountingTableSeeder::class);
     }
 }
