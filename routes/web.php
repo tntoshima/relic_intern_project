@@ -44,9 +44,7 @@ Route::get('/payment', function () {
     return view('payment');
 });
 
-Route::get('/table', function () {
-    return view('table');
-});
+Route::get('/table/{id}/{date}', [AttendanceController::class, 'showList']);
 
 Route::post('/attendance-data', [AttendanceController::class, 'qrPost']);
 

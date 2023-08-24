@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Member;
 
 class Affiliation extends Model
 {
@@ -17,4 +18,9 @@ class Affiliation extends Model
         'member_id',
         'role'
     ];
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
+    
 }
