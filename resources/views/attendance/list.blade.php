@@ -6,24 +6,43 @@
 
 @section('child')
 
+<style>
+    .table-container {
+        text-align: center;
+        margin: 50px auto; /* 要調整 */
+    }
 
-<table>
-    <tr>
-        <th>生徒名</th>
-        <th>出席時間</th>
-    </tr>
-    @foreach($club->members as $member)
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    th, td {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 8px;
+    }
+</style>
+
+<div class="table-container">
+    <table>
         <tr>
-            <td>名前: {{$member->name}}</td>
-            <td>
-                @foreach($attendances as $attendance)
-                    @if ($attendance->member_id == $member->id)
-                        <p>{{$attendance->date}}</p>
-                    @endif
-                @endforeach
-            </td>
+            <th>生徒名</th>
+            <th>出席時間</th>
         </tr>
-    @endforeach
-</table>
+        @foreach($club->members as $member)
+            <tr>
+                <td>{{$member->name}}</td>
+                <td>
+                    @foreach($attendances as $attendance)
+                        @if ($attendance->member_id == $member->id)
+                            {{$attendance->date}}
+                        @endif
+                    @endforeach
+                </td>
+            </tr>
+        @endforeach
+    </table>
+</div>
 
 @endsection
