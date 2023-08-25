@@ -115,7 +115,7 @@ $out = - $place - $fixtures  - $insurance;
                     echo 'class="in"';
                 }
             ?> >
-                支出
+                <h5>合計収支</h5>
             </label>
             <input type="text" name="answer" value="{{ $answer }}" required readonly>
         </div>
