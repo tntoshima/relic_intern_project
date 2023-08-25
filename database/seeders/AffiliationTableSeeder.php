@@ -31,6 +31,41 @@ class AffiliationTableSeeder extends Seeder
                 'role'=>'parent'
             ],
             [
+                'club_id'=>'1',
+                'member_id'=>'4',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'5',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'6',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'7',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'8',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'9',
+                'role'=>'parent'
+            ],
+            [
+                'club_id'=>'1',
+                'member_id'=>'10',
+                'role'=>'parent'
+            ],
+            [
                 'club_id'=>'2',
                 'member_id'=>'2',
                 'role'=>'teacher'
