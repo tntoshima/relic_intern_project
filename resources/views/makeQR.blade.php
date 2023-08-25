@@ -1,15 +1,15 @@
 <?php
-require_once(".public/phpqrcode/qrlib.php");
+require_once("phpqrcode/qrlib.php");
  
 	// QR削除
 	array_map("unlink", glob("qr/sample.png"));
  
 	// 現在時刻取得
-	$date = date("Y-m-d H:i:s");
+	$date = date("Y-m-d");
 	$value = "現在時刻は{$date}です。";
  
 	// パスセット
-	$path = "./qr/sample.png";
+	$path = "phpqrcode/qr/sample.png";
  
 	$qr = new QRcode();
  
@@ -30,7 +30,7 @@ body
 </head>
 <body>
 <h1><?php echo $value ?></h1>
-<img  src="qr/sample.png">
+<img  src="phpqrcode/qr/sample.png">
 </body>
 </html>
  
