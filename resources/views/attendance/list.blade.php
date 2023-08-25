@@ -46,31 +46,44 @@ body
 {
 	text-align: center;
 }
+.centered-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* 画面の高さに合わせて調整 */
+    }
 
+    .centered-image img {
+        margin: auto; /* 水平方向に中央配置 */
+        max-width: 100%;
+        max-height: 100%;}
+        
 </style>
 <h1><?php echo $value ?></h1>
-<body>
-<img  src="/phpqrcode/qr/sample.png"></body>
+<div class="centered-image">
+    <img src="/phpqrcode/qr/sample.png">
+</div>
 <div class="table-container">
 
-    <table>
-        <tr>
-            <th>生徒名</th>
-            <th>出席時間</th>
+<table>
+    <tr>
+        <th>生徒名</th>
+        <th>出席時間</th>
+    </tr>
+    @foreach($club->members as $member)
+        <tr @foreach($attendances as $attendance) @if ($attendance->member_id == $member->id && $attendance->date) style="background-color: rgba(255, 255, 128, .5);" @endif @endforeach>
+            <td>{{$member->name}}</td>
+            <td>
+                @foreach($attendances as $attendance)
+                    @if ($attendance->member_id == $member->id)
+                        {{$attendance->date}}
+                    @endif
+                @endforeach
+            </td>
         </tr>
-        @foreach($club->members as $member)
-            <tr>
-                <td>{{$member->name}}</td>
-                <td>
-                    @foreach($attendances as $attendance)
-                        @if ($attendance->member_id == $member->id)
-                            {{$attendance->date}}
-                        @endif
-                    @endforeach
-                </td>
-            </tr>
-        @endforeach
-    </table>
+    @endforeach
+</table>
+
 </div>
 
 @endsection

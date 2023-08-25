@@ -31,6 +31,41 @@ class MembersTableSeeder extends Seeder
                 'mail_address' => 'sugiyama@gmail.com',
                 'password' => 'sugiyama',
             ],
+            [
+                'name' => 'tanaka',
+                'mail_address' => 'tanaka@gmail.com',
+                'password' => 'tanaka',
+            ],
+            [
+                'name' => 'kishita',
+                'mail_address' => 'kishita@gmail.com',
+                'password' => 'kishita',
+            ],
+            [
+                'name' => 'ujie',
+                'mail_address' => 'ujie@gmail.com',
+                'password' => 'ujie',
+            ],
+            [
+                'name' => 'watanabe',
+                'mail_address' => 'watanabe@gmail.com',
+                'password' => 'watanabe',
+            ],
+            [
+                'name' => 'oba',
+                'mail_address' => 'oba@gmail.com',
+                'password' => 'oba',
+            ],
+            [
+                'name' => 'konagai',
+                'mail_address' => 'konagai@gmail.com',
+                'password' => 'konagai',
+            ],
+            [
+                'name' => 'takai',
+                'mail_address' => 'takai@gmail.com',
+                'password' => 'takai',
+            ],
         ]);
     }
 }
