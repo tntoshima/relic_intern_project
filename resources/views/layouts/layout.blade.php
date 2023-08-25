@@ -25,9 +25,9 @@
                     </nav>
         
                 </div>
-            </div>
-            <div>
-                @yield('page-name')
+                <div>
+                    @yield('page-name')
+                </div>
             </div>
         </h2>
     </x-slot>

@@ -30,7 +30,11 @@ $weeks = [];
 $week = '';
 $week .= str_repeat('<td></td>', $youbi);
 for($day = 1; $day <= $day_count; $day++, $youbi++){
+if($day < 10){
+$date = $ym . '-0' . $day;
+}else{
 $date = $ym . '-' . $day;
+}
 $link = '<a href="table/1/' .$date  . '"' . $date . '>' . $day . '</a>';
 if($today == $date){
 $week .= '<td class="today">' . $link . '</td>';
