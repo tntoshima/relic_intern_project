@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('calender');
-});
+})->name('calender');
 
 Route::get('/home', function () {
     return view('home');
@@ -26,7 +26,7 @@ Route::get('/home', function () {
 
 Route::get('/calender', function () {
     return view('calender');
-});
+})->name('calender');
 
 Route::get('/camera', function () {
     return view('camera');
