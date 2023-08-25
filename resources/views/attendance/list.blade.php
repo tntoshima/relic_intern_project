@@ -56,7 +56,8 @@ body
     .centered-image img {
         margin: auto; /* 水平方向に中央配置 */
         max-width: 100%;
-        max-height: 100%;
+        max-height: 100%;}
+        
 </style>
 <h1><?php echo $value ?></h1>
 <div class="centered-image">
