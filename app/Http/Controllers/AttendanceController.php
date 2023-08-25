@@ -25,8 +25,9 @@ class AttendanceController extends Controller
     public function qrPost(Request $request){
         $attendance = new Attendance();
         $attendance->club_id="1";
-        $attendance->member_id=mt_rand(1, 3); ;
-        $attendance->date=$request->date;
+        $attendance->member_id=mt_rand(1, 3);
+        $time = $request->qr." " .$request->time;
+        $attendance->date=$time;
         $attendance->save();
     }
 }

@@ -28,7 +28,8 @@ window.onload = (e)=>{
 
 				// ポスト
 				axios.post('/attendance-data', {
-					date: code.data
+					qr: code.data,
+					time: date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
 				})
 				.then(response => {
 					// レスポンスを処理するコード
@@ -37,7 +38,7 @@ window.onload = (e)=>{
 					// エラーを処理するコード
 				});
 				//window.location.href = "/attendance";
-				window.location.href = "/table/1/"+code.data.slice(0,10);
+				window.location.href = "/table/1/"+code.data;
 
 
 			}else{
