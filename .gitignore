@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/phpqrcode/qr/sample.png
 /storage/*.key
 /vendor
 .env
