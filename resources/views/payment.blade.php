@@ -31,6 +31,14 @@
             margin-bottom: 20px;
         }
 
+        .in{
+            color: green;
+        }
+
+        .out{
+            color: red;
+        }
+
         label {
             font-weight: bold;
         }
@@ -66,6 +74,8 @@ $subsidy = isset($_GET['subsidy']) ? $_GET['subsidy'] : 0;
 
 
 $answer = $monthly - $place - $fixtures  - $insurance + $subsidy;
+$in = $monthly + $subsidy;
+$out = - $place - $fixtures  - $insurance;
 
 
 
@@ -74,31 +84,48 @@ $answer = $monthly - $place - $fixtures  - $insurance + $subsidy;
 <div class="container">
     <form action="payment" method="GET">
         <div class="form-group">
-            <label for="monthly">月謝</label>
+            <label class="in">月謝（収入）</label>
             <input type="text" name="monthly" value="{{ $monthly }}" required autofocus>
         </div>
         <div class="form-group">
-            <label for="place">場所代</label>
+            <label class="in">補助金（収入）</label>
+            <input type="text" name="subsidy" value="{{ $subsidy }}" required>
+        </div>
+        <div class="form-group">
+            <label class="out">場所代（支出）</label>
             <input type="text" name="place" value="{{ $place }}" required>
         </div>
         <div class="form-group">
-            <label for="fixtures">備品</label>
+            <label class="out">備品（支出）</label>
             <input type="text" name="fixtures" value="{{ $fixtures }}" required>
         </div>
         <div class="form-group">
-            <label for="insurance">保険</label>
+            <label class="out">保険（支出）</label>
             <input type="text" name="insurance" value="{{ $insurance }}" required>
-        </div>
-        <div class="form-group">
-            <label for="subsidy">補助金</label>
-            <input type="text" name="subsidy" value="{{ $subsidy }}" required>
         </div>
         <div class="form-group">
             <input type="submit" value="計算する">
         </div>
         <div class="form-group">
-            <label for="answer">合計</label>
+            <label <?php
+                if($answer < 0) {
+                    echo 'class="out"';
+                } 
+                elseif($answer > 0) {
+                    echo 'class="in"';
+                }
+            ?> >
+                支出
+            </label>
             <input type="text" name="answer" value="{{ $answer }}" required readonly>
+        </div>
+        <div class="form-group">
+            <label class="in">合計収入</label>
+            <input type="text" name="answer" value="{{ $in }}" required readonly>
+        </div>
+        <div class="form-group">
+            <label class="out">合計支出</label>
+            <input type="text" name="answer" value="{{ $out }}" required readonly>
         </div>
     </form>
 </div>
