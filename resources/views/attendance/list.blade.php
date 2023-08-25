@@ -14,8 +14,7 @@ require_once("phpqrcode/qrlib.php");
 	array_map("unlink", glob("qr/sample.png"));
  
 	// 現在時刻取得
-	$date = date("Y-m-d");
-	$value = "現在時刻は{$date}です。";
+	$value = "日付{$date}";
  
 	// パスセット
 	$path = "phpqrcode/qr/sample.png";
@@ -23,7 +22,7 @@ require_once("phpqrcode/qrlib.php");
 	$qr = new QRcode();
  
 	// QRコード作成
-	$qr->png($value, $path, QR_ECLEVEL_M, 12);
+	$qr->png($date, $path, QR_ECLEVEL_M, 12);
 ?>
 
 <style>
